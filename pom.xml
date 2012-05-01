@@ -62,6 +62,29 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
+            
+            <plugin>
+            	 <artifactId>maven-resources-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/assets/www</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>../client-html5-www</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+        </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
